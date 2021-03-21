@@ -1,19 +1,22 @@
 package org.iesfm.discoShop;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
+import java.util.TreeMap;
+
 
 public class Shop {
 
     private String nombre;
     private String direccion;
-    private Set<Disc> discs;
-    private Set<Member> members;
+    private TreeMap<Integer, Disc> disks;
+    private HashSet<Member> members;
 
-    public Shop(String nombre, String direccion, Set<Disc> discs, Set<Member> members) {
+    public Shop(String nombre, String direccion, TreeMap<Integer, Disc> disks, HashSet<Member> members) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.discs = discs;
+        this.disks = disks;
         this.members = members;
     }
 
@@ -33,19 +36,19 @@ public class Shop {
         this.direccion = direccion;
     }
 
-    public Set<Disc> getDiscs() {
-        return discs;
+    public TreeMap<Integer, Disc> getDisks() {
+        return disks;
     }
 
-    public void setDiscs(Set<Disc> discs) {
-        this.discs = discs;
+    public void setDisks(TreeMap<Integer, Disc> disks) {
+        this.disks = disks;
     }
 
-    public Set<Member> getMembers() {
+    public HashSet<Member> getMembers() {
         return members;
     }
 
-    public void setMembers(Set<Member> members) {
+    public void setMembers(HashSet<Member> members) {
         this.members = members;
     }
 
@@ -54,11 +57,11 @@ public class Shop {
         if (this == o) return true;
         if (!(o instanceof Shop)) return false;
         Shop shop = (Shop) o;
-        return Objects.equals(nombre, shop.nombre) && Objects.equals(direccion, shop.direccion) && Objects.equals(discs, shop.discs) && Objects.equals(members, shop.members);
+        return Objects.equals(nombre, shop.nombre) && Objects.equals(direccion, shop.direccion) && Objects.equals(disks, shop.disks) && Objects.equals(members, shop.members);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, direccion, discs, members);
+        return Objects.hash(nombre, direccion, disks, members);
     }
 }

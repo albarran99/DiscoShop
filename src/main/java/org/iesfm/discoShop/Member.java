@@ -1,16 +1,17 @@
 package org.iesfm.discoShop;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
+
 
 public class Member {
     private String name;
     private String surname;
     private String nif;
     private int cp;
-    private Set<Order> orders;
+    private List<Order> orders;
 
-    public Member(String name, String surname, String nif, int cp, Set<Order> orders) {
+    public Member(String name, String surname, String nif, int cp, List<Order> orders) {
         this.name = name;
         this.surname = surname;
         this.nif = nif;
@@ -50,11 +51,11 @@ public class Member {
         this.cp = cp;
     }
 
-    public Set<Order> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Order> orders) {
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 

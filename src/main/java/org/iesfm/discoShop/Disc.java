@@ -3,7 +3,7 @@ package org.iesfm.discoShop;
 import java.util.Objects;
 import java.util.Set;
 
-public class Disc {
+public class Disc implements Comparable<> {
     private String title;
     private String artist;
     private Set<String> genres;
@@ -12,6 +12,13 @@ public class Disc {
         this.title = title;
         this.artist = artist;
         this.genres = genres;
+    }
+
+
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 
     public String getTitle() {
